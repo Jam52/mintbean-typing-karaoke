@@ -9,6 +9,7 @@ This hackerthon is to build a typing game with a focus on processing keyboard in
 The project is a colaboration between:
 
 Jamie Sajdak - [Github](https://github.com/Jam52) / [Portfolio](https://www.jamiesajdak.com/)
+Scott Beckett - [Github](https://github.com/saxlbeckett) / [Audio Notepad](https://audio-notepad.herokuapp.com/)
 
 ## Available Scripts
 
