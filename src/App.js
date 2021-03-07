@@ -10,12 +10,8 @@ function App() {
       <h1>Memory Maddening</h1>
       <Router>
         <Switch>
-          <Route exact path='/about'>
-            <LandingPage />
-          </Route>
-          <Route path='/'>
-            <GamePage/>
-          </Route>
+          <Route exact path='/about' component={LandingPage} />
+          <Route path='/' component={GamePage} />
         </Switch>
       </Router>
     </div>
