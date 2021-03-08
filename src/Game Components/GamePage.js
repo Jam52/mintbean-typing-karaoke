@@ -28,21 +28,23 @@ const GamePage = () => {
   const gameStartHandler = () => {};
 
   return(
+    // View of screen without the game title
     <div style={styles.content}>
-
+      {/* Top of page where Score, Timer, link to landing page, and settings are located*/} 
       <div style={{...styles.top, ...styles.container}}>
-        {/* Top of page  Score, link to landing page, and settings*/}
-
         {/* Score section */}
         <div style={{flex: 8, ...styles.container}}>
           <p style={{...styles.score, ...styles.container}}>
             Score: 0
           </p>
         </div>
+        {/* Timer section */}
+
+        {/* Link to Landing Page */}
         <div style={styles.container}>
           <Link to="/about" style={{flex: 1, ...styles.container}}>Goes to landing page</Link>
         </div>
-       
+        {/* Settings Section */}
         <div style={{flex: 1,...styles.container}}>
           <p style={{...styles.link,...styles.container}}>
             settings
@@ -50,8 +52,8 @@ const GamePage = () => {
         </div>
       </div>
 
+      {/* Game content section */}
       <div style={{...styles.container, ...styles.gameSection}}>
-        {/* Game content */}
         <div>
           <h1>Game Page</h1>
           {gameSettings.isGameRunning ? (
@@ -68,12 +70,13 @@ const GamePage = () => {
           )}
         </div>
       </div>
-      
+
+      {/* User Input Section */}
       <div style={{...styles.container, ...styles.inputSection}}>
-        {/* User Input Section */}
         <div style={styles.container}>user input here</div>
       </div>
-
+      
+      {/* Footer Section  */}
       <div style={{...styles.container, ...styles.footer}}>
         <div style={styles.container}>Footer is here</div>
       </div>
@@ -82,7 +85,7 @@ const GamePage = () => {
 }
 
 
-
+// CSS STYLING 
 const styles = {
   content:{
     display: 'flex', 
