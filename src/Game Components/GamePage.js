@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Canvas from './Canvas';
 import StartGame from './StartGame';
-import { Link } from 'react-router-dom'
+import Score from './Score'
+
 
 const GamePage = () => {
   //words fetched from api when game is started (so there are new words each time)
