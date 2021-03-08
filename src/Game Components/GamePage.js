@@ -32,18 +32,26 @@ const GamePage = () => {
     <div style={styles.content}>
       {/* Top of page where Score, Timer, link to landing page, and settings are located*/} 
       <div style={{...styles.top, ...styles.container}}>
+
         {/* Score section */}
-        <div style={{flex: 8, ...styles.container}}>
+        <div style={{flex: 4, ...styles.container}}>
           <p style={{...styles.score, ...styles.container}}>
             Score: 0
           </p>
         </div>
+
         {/* Timer section */}
+        <div style={{flex: 4, ...styles.container}}>
+          <p style={{...styles.score, ...styles.container}}>
+            00:00
+          </p>
+        </div>
 
         {/* Link to Landing Page */}
         <div style={styles.container}>
           <Link to="/about" style={{flex: 1, ...styles.container}}>Goes to landing page</Link>
         </div>
+
         {/* Settings Section */}
         <div style={{flex: 1,...styles.container}}>
           <p style={{...styles.link,...styles.container}}>
