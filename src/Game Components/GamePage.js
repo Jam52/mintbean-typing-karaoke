@@ -19,13 +19,22 @@ const GamePage = () => {
   const [userInput, setUserInput] = useState('');
   const [isGameFinished, setIsGameFinished] = useState(false);
 
-  // useCountDown hook, initial values of 30 seconds (30000 milliseconds) and increments of 100 milliseconds
-  const [timeLeft, { start, pause, resume, reset }] = useCountDown(30000, 100);
+  // useCountDown hook, initial values of 30 seconds (30000 milliseconds) and increments of 100 milliseconds, timeleft will be in milliseconds
+  const [timeLeft, { start, pause, resume, reset }] = useCountDown(5000, 100);
 
   //toDo: keyboard listener function listends to keyboard and updates userInput, checks if word matches word in correctWordsArray and update score
 
   //toDo: gameStartHandler, sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
-  const gameStartHandler = () => {};
+  const gameStartHandler = () => {
+    start();
+    setGameSettings({ ...gameSettings, isGameRunning: true });
+    setIsGameFinished(false);
+  };
+
+  //endGameHandler sets isGameFinished to true which will display the score component
+  const endGameHandler = () => {
+    setIsGameFinished(true);
+  };
 
   return (
     <div style={styles.content}>
@@ -51,17 +60,18 @@ const GamePage = () => {
         {/* Game content */}
         <div>
           <h1>Game Page</h1>
-          {gameSettings.isGameRunning ? (
+          {isGameFinished ? (
+            <Score score={score} />
+          ) : gameSettings.isGameRunning ? (
             <Canvas
               wordsData={wordsData}
               gameSettings={gameSettings}
               setCorrectWordsArray={setCorrectWordsArray}
-              setIsGameFinished={setIsGameFinished}
+              endGameHandler={endGameHandler}
+              timeLeft={timeLeft}
             />
-          ) : isGameFinished ? (
-            <Score score={score} />
           ) : (
-            <StartGame />
+            <StartGame start={gameStartHandler} />
           )}
         </div>
       </div>
