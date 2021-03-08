@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import Canvas from './Canvas';
 import StartGame from './StartGame';
-=======
-import React from 'react'
 import { Link } from 'react-router-dom'
->>>>>>> master
 
 const GamePage = () => {
   //words fetched from api when game is started (so there are new words each time)
@@ -30,7 +26,6 @@ const GamePage = () => {
   return (
     <div>
       <h1>Game Page</h1>
-<<<<<<< HEAD
       {gameSettings.isGameRunning ? (
         <Canvas
           wordsData={wordsData}
@@ -43,9 +38,7 @@ const GamePage = () => {
       ) : (
         <StartGame />
       )}
-=======
       <Link to="/">Goes to landing page. landing page image/text here</Link>
->>>>>>> master
     </div>
   );
 };
