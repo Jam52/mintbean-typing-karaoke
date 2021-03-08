@@ -9,7 +9,7 @@ const Canvas = (props) => {
 
   //toDo: funtion to randomly grab new word(s) and add to correctWords Array
 
-  //check if timer is at 0 and isGameFinished to true
+  //check if timer is at 0 and set isGameFinished to true
   console.log(props.timeLeft);
   if (props.timeLeft <= 0) {
     props.endGameHandler();

@@ -27,9 +27,12 @@ const GamePage = () => {
 
   //toDo: gameStartHandler, sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
   const gameStartHandler = async () => {
+    //fetches word data from api with max length of 4
     const wordDataFromApi = await fetchRandomWords(4);
     console.log(wordDataFromApi);
     setWordsData(wordDataFromApi);
+
+    //starts timer and setsGame running to true to display Canvas component
     start();
     setGameSettings({ ...gameSettings, isGameRunning: true });
     setIsGameFinished(false);
