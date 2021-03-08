@@ -62,21 +62,19 @@ const GamePage = () => {
 
       {/* Game content section */}
       <div style={{...styles.container, ...styles.gameSection}}>
-        <div>
-          <h1>Game Page</h1>
-          {gameSettings.isGameRunning ? (
-            <Canvas
-              wordsData={wordsData}
-              gameSettings={gameSettings}
-              setCorrectWordsArray={setCorrectWordsArray}
-              setIsGameFinished={setIsGameFinished}
-            />
-          ) : isGameFinished ? (
-            <Score score={score} />
-          ) : (
-            <StartGame />
-          )}
-        </div>
+
+        {gameSettings.isGameRunning ? (
+          <Canvas
+            wordsData={wordsData}
+            gameSettings={gameSettings}
+            setCorrectWordsArray={setCorrectWordsArray}
+            setIsGameFinished={setIsGameFinished}
+          />
+        ) : isGameFinished ? (
+          <Score score={score} />
+        ) : (
+          <StartGame />
+        )}
       </div>
 
       {/* User Input Section */}
@@ -120,7 +118,7 @@ const styles = {
   }, 
   gameSection: {
     flex: 7,
-    
+    display: 'flex',
   },
   inputSection: {
     flex: 1
