@@ -10,12 +10,11 @@ function App() {
       <h1>Memory Maddening</h1>
       <Router>
         <Switch>
-          <Route exact path='/game' component={GamePage} />
-          <Route path='/' component={LandingPage} />
+          <Route exact path="/game" component={GamePage} />
+          <Route path="/" component={LandingPage} />
         </Switch>
       </Router>
     </div>
-    
   );
 }
 
