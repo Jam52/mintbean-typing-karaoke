@@ -49,19 +49,30 @@ const GamePage = () => {
         <div style={{ flex: 8, ...styles.container }}>
           <p style={{ ...styles.score, ...styles.container }}>Score: 0</p>
         </div>
+
+        {/* Timer section */}
+        <div style={{ flex: 4, ...styles.container }}>
+          <p style={{ ...styles.score, ...styles.container }}>
+            {Math.floor((timeLeft / 1000) % 60)}:
+            {parseInt((timeLeft % 1000) / 10)}
+          </p>
+        </div>
+
+        {/* Link to Landing Page */}
         <div style={styles.container}>
           <Link to="/about" style={{ flex: 1, ...styles.container }}>
             Goes to landing page
           </Link>
         </div>
 
+        {/* Settings Section */}
         <div style={{ flex: 1, ...styles.container }}>
           <p style={{ ...styles.link, ...styles.container }}>settings</p>
         </div>
       </div>
 
+      {/* Game content section */}
       <div style={{ ...styles.container, ...styles.gameSection }}>
-        {/* Game content */}
         <div>
           <h1>Game Page</h1>
           {isGameFinished ? (
@@ -80,11 +91,12 @@ const GamePage = () => {
         </div>
       </div>
 
+      {/* User Input Section */}
       <div style={{ ...styles.container, ...styles.inputSection }}>
-        {/* User Input Section */}
         <div style={styles.container}>user input here</div>
       </div>
 
+      {/* Footer Section  */}
       <div style={{ ...styles.container, ...styles.footer }}>
         <div style={styles.container}>Footer is here</div>
       </div>
@@ -92,6 +104,7 @@ const GamePage = () => {
   );
 };
 
+// CSS STYLING
 const styles = {
   content: {
     display: 'flex',
