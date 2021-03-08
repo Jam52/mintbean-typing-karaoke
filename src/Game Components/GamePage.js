@@ -6,7 +6,7 @@ const GamePage = () => {
   return(
     <div>
       <h1>Game Page</h1>
-      <Link to="/about">Goes to landing page. landing page image/text here</Link>
+      <Link to="/">Goes to landing page. landing page image/text here</Link>
     </div>
   )
 }
