@@ -4,6 +4,7 @@ import Canvas from './Canvas';
 import StartGame from './StartGame';
 import Score from './Score';
 import useCountDown from 'react-countdown-hook';
+import { fetchRandomWords } from '../services/randomWordApi';
 
 const GamePage = () => {
   //words fetched from api when game is started (so there are new words each time)
@@ -25,7 +26,10 @@ const GamePage = () => {
   //toDo: keyboard listener function listends to keyboard and updates userInput, checks if word matches word in correctWordsArray and update score
 
   //toDo: gameStartHandler, sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
-  const gameStartHandler = () => {
+  const gameStartHandler = async () => {
+    const wordDataFromApi = await fetchRandomWords(4);
+    console.log(wordDataFromApi);
+    setWordsData(wordDataFromApi);
     start();
     setGameSettings({ ...gameSettings, isGameRunning: true });
     setIsGameFinished(false);
