@@ -83,7 +83,6 @@ const GamePage = () => {
 
       {/* Game content section */}
       <div style={{ ...styles.container, ...styles.gameSection }}>
-        <div>
           {isGameFinished ? (
             <Score score={score} />
           ) : gameSettings.isGameRunning ? (
@@ -97,7 +96,6 @@ const GamePage = () => {
           ) : (
             <StartGame start={gameStartHandler} />
           )}
-        </div>
       </div>
 
       <div style={{ ...styles.container, ...styles.inputSection }}>
