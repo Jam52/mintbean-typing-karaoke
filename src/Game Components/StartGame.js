@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const StartGame = () => {
-
-  return(
+const StartGame = (props) => {
+  return (
     <div>
-      <h1>Start Game Button</h1>
+      <h1 onClick={props.start}>Start Game Button</h1>
     </div>
-  )
-}
-export default StartGame
+  );
+};
+export default StartGame;
