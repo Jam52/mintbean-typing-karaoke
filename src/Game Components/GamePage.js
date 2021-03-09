@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Canvas from './Canvas';
 import StartGame from './StartGame';
 import Score from './Score';
+import Input from './Input'
 import useCountDown from 'react-countdown-hook';
 import { fetchRandomWords } from '../services/randomWordApi';
 
@@ -24,7 +25,7 @@ const GamePage = () => {
   const [timeLeft, { start, pause, resume, reset }] = useCountDown(5000, 100);
 
   //toDo: keyboard listener function listends to keyboard and updates userInput, checks if word matches word in correctWordsArray and update score
-
+ 
   //toDo: gameStartHandler, sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
   const gameStartHandler = async () => {
     //fetches word data from api with max length of 4
@@ -93,10 +94,18 @@ const GamePage = () => {
           )}
         </div>
       </div>
-
-      {/* User Input Section */}
-      <div style={{ ...styles.container, ...styles.inputSection }}>
-        <div style={styles.container}>user input here</div>
+      
+      <div style={{...styles.container, ...styles.inputSection}}>
+        {/* User Input Section */}
+        <div style={styles.container}>
+          <Input 
+          setUserInput={setUserInput} 
+          userInput={userInput}
+          correctWordsArray={correctWordsArray}
+          setScore={setScore}
+          score={score}
+          />
+        </div>
       </div>
 
       {/* Footer Section  */}
