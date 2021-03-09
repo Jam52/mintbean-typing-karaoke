@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const StartGame = () => {
+const StartGame = (props) => {
 
   return(
     <div style={{flex: 1, display: 'flex', alignSelf: 'center', justifyContent: 'center', ...container}}>
-        <button style={styles.button}>Start</button>
+        <button style={styles.button} onClick={props.start}>Start</button>
     </div>
   )
 }
