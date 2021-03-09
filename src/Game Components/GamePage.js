@@ -3,37 +3,38 @@ import { Link } from 'react-router-dom';
 import Canvas from './Canvas';
 import StartGame from './StartGame';
 import Score from './Score';
-import Input from './Input'
+import Input from './Input';
 import useCountDown from 'react-countdown-hook';
 import { fetchRandomWords } from '../services/randomWordApi';
+import {
+  currentWordsArray,
+  correctWordsArray,
+  updateCurrentWords,
+} from './gameData';
 
 const GamePage = () => {
   //words fetched from api when game is started (so there are new words each time)
   const [wordsData, setWordsData] = useState(null);
   const [gameSettings, setGameSettings] = useState({
-    revealLength: 500,
+    revealLength: 1000,
     revealIntervalLength: 3000,
-    numWordsRevealed: 1,
+    numWordsRevealed: 2,
     isGameRunning: false,
   });
-  const [correctWordsArray, setCorrectWordsArray] = useState([]);
+  // const [correctWordsArray, setCorrectWords] = useState([]);
   const [score, setScore] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [isGameFinished, setIsGameFinished] = useState(false);
 
   // useCountDown hook, initial values of 30 seconds (30000 milliseconds) and increments of 100 milliseconds, timeleft will be in milliseconds
-  const [timeLeft, { start, pause, resume, reset }] = useCountDown(5000, 100);
+  const [timeLeft, { start, pause, resume, reset }] = useCountDown(30000, 100);
 
   //toDo: keyboard listener function listends to keyboard and updates userInput, checks if word matches word in correctWordsArray and update score
- 
-  //toDo: gameStartHandler, sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
-  const gameStartHandler = async () => {
-    //fetches word data from api with max length of 4
-    const wordDataFromApi = await fetchRandomWords(4);
-    console.log(wordDataFromApi);
-    setWordsData(wordDataFromApi);
 
-    //starts timer and setsGame running to true to display Canvas component
+  //Sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
+  const gameStartHandler = async () => {
+    const wordDataFromApi = await fetchRandomWords(4);
+    setWordsData(wordDataFromApi);
     start();
     setGameSettings({ ...gameSettings, isGameRunning: true });
     setIsGameFinished(false);
@@ -42,6 +43,11 @@ const GamePage = () => {
   //endGameHandler sets isGameFinished to true which will display the score component
   const endGameHandler = () => {
     setIsGameFinished(true);
+  };
+
+  //updateCurrentWordsHandler function to add correct word to array
+  const updateCurrentWordsHandler = () => {
+    updateCurrentWords(wordsData, gameSettings.numWordsRevealed);
   };
 
   return (
@@ -83,10 +89,10 @@ const GamePage = () => {
             <Score score={score} />
           ) : gameSettings.isGameRunning ? (
             <Canvas
-              wordsData={wordsData}
+              currentWords={currentWordsArray}
               gameSettings={gameSettings}
-              setCorrectWordsArray={setCorrectWordsArray}
               endGameHandler={endGameHandler}
+              updateCurrentWords={updateCurrentWordsHandler}
               timeLeft={timeLeft}
             />
           ) : (
@@ -94,16 +100,16 @@ const GamePage = () => {
           )}
         </div>
       </div>
-      
-      <div style={{...styles.container, ...styles.inputSection}}>
+
+      <div style={{ ...styles.container, ...styles.inputSection }}>
         {/* User Input Section */}
         <div style={styles.container}>
-          <Input 
-          setUserInput={setUserInput} 
-          userInput={userInput}
-          correctWordsArray={correctWordsArray}
-          setScore={setScore}
-          score={score}
+          <Input
+            setUserInput={setUserInput}
+            userInput={userInput}
+            correctWordsArray={correctWordsArray}
+            setScore={setScore}
+            score={score}
           />
         </div>
       </div>
