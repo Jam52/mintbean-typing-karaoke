@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.inputValue{
+  position:absolute;
+  left:-99999px;
+}
+.inputButton{
+  position:absolute;
+  left:-99999px;
+}
+
+.inputBox{
+  border: 5px solid black;
+  border-radius: 1%;
+  height: 5.5rem;
+  color: black;
+}
+

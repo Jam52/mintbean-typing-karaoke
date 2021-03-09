@@ -6,17 +6,25 @@ import LandingPage from './Game Components/LandingPage';
 
 function App() {
   return (
-    <div>
+    <div style={styles.fullWindow}>
       <h1>Memory Maddening</h1>
       <Router>
         <Switch>
-          <Route exact path='/game' component={GamePage} />
-          <Route path='/' component={LandingPage} />
+          <Route exact path="/game" component={GamePage} />
+          <Route path="/" component={LandingPage} />
         </Switch>
       </Router>
     </div>
-    
   );
+}
+
+const styles = {
+  fullWindow: {
+    display: 'flex', 
+    flex: 1, 
+    flexDirection: 'column', 
+    height: '100vh' 
+  }
 }
 
 export default App;
