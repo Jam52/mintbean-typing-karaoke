@@ -41,10 +41,10 @@ const Canvas = (props) => {
     <div style={styles.container}>
       <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
         <Card style={styles.cardSize}>
-          {words}
+          <p>Can you remember?!?!?!</p>
         </Card>
         <Card style={styles.cardSize}>
-          <p>Can you remember?!?!?!</p>
+          {words}
         </Card >
       </ReactCardFlip>
     </div>
