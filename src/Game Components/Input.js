@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { currentWordsArray } from './gameData'
 
 const Input = (props) => {
 
@@ -13,28 +14,45 @@ const Input = (props) => {
       props.setUserInput( copy+= event.key)
     }
   }
-  let answer = ""
+  
   const submitHandler = (event) => {
     event.preventDefault()
-    if(props.correctWordsArray[0] !== props.userInput){
-      props.setUserInput("")
-    } else if(props.correctWordsArray[0] === props.userInput){
+    console.log("user input", props.userInput)
+    if(props.currentWordsArray[0] !== props.userInput){
+      if(props.score > 0){
+        let copy = props.score
+        props.setScore(copy -= 1)
+        props.setUserInput("")
+        props.setCat("https://upload.wikimedia.org/wikipedia/commons/3/33/Hannibal_Poenaru_-_Nasty_cat_%21_%28by-sa%29.jpg")
+      } else {
+        props.setUserInput("")
+        props.setCat("https://upload.wikimedia.org/wikipedia/commons/3/33/Hannibal_Poenaru_-_Nasty_cat_%21_%28by-sa%29.jpg")
+      }
+    } else if(props.currentWordsArray[0] === props.userInput){
       let copy = props.score
       props.setScore(copy += 1)
+      props.correctWordsArray.push(props.userInput)
       props.setUserInput("")
+      props.setCat("https://upload.wikimedia.org/wikipedia/commons/0/04/So_happy_smiling_cat.jpg")
     } else {
       props.setUserInput("")
+      props.setCat("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/June_odd-eyed-cat_cropped.jpg/1424px-June_odd-eyed-cat_cropped.jpg")
     }
   }
+  //<h1 className="wrongAnswer">{answer}</h1>
   return(
-    <div className="inputBox">
-      <h1 className="wrongAnswer">{answer}</h1>
-      <h1>{props.userInput}</h1>  
-      <form onSubmit={submitHandler}>
-        <input type="text" onKeyDown={eventHandler} className="inputValue" autoFocus="autofocus"/>
-        <input className="inputButton" type="submit" ></input>
+    <div > 
+
+      <form className="inputBox" onSubmit={submitHandler}>
+        <span>
+          <img className="cat" src={props.cat} alt="an image of a cat"></img>
+          <input name="input" value={props.userInput} type="text" onKeyDown={eventHandler} className="inputValue" />
+          <img className="cat" src={props.cat} alt="an image of a cat"></img>
+        </span>
+        
+        <input className="inputButton" type="submit"></input>
+        
       </form>
-      
     </div>
   )
 }
