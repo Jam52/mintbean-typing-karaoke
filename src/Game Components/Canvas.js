@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ReactCardFlip from 'react-card-flip';
 
 const Canvas = (props) => {
+  let [isFront, flip] = useState(true)
   let areWordsVisible = false;
 
   //shows how much time has passed since the start of the game
@@ -31,6 +33,16 @@ const Canvas = (props) => {
     return <p>{word}</p>;
   });
 
-  return <div>{areWordsVisible ? words : <p>Can you Remember?!?!</p>}</div>;
+  return (
+    <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
+        <div>
+          {words}
+        </div>
+        <div>
+          <p>Can you remember?!?!?!</p>
+        </div>
+      </ReactCardFlip>
+  )
+  // <div>{areWordsVisible ? words : <p>Can you Remember?!?!</p>}</div>;
 };
 export default Canvas;
