@@ -56,7 +56,7 @@ const GamePage = () => {
         {/* Top of page  Score, link to landing page, and settings*/}
 
         {/* Score section */}
-        <div style={{ flex: 8, ...styles.container }}>
+        <div style={{ flex: 4, ...styles.container }}>
           <p style={{ ...styles.score, ...styles.container }}>Score: 0</p>
         </div>
 
