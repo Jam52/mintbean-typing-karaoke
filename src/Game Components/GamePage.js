@@ -115,26 +115,23 @@ const GamePage = () => {
       <div style={{ ...styles.inputSection }}>
         <h3>Enter your words in the field below and press enter to submit</h3>
         {/* User Input Section */}
-        <div>
-          <Input
-            setUserInput={(input) => {
-              console.log('ingamepage: ' + input + userInput);
-              setUserInput(userInput + input);
-            }}
-            userInput={userInput}
-            currentWordsArray={currentWordsArray}
-            correctWordsArray={correctWordsArray}
-            setCat={setCat}
-            cat={cat}
-            isGameRunnning={gameSettings.isGameRunning}
-          />
-        </div>
+
+        <Input
+          setUserInput={(input) => {
+            console.log('ingamepage: ' + input + userInput);
+            setUserInput(userInput + input);
+          }}
+          userInput={userInput}
+          currentWordsArray={currentWordsArray}
+          correctWordsArray={correctWordsArray}
+          setCat={setCat}
+          cat={cat}
+          isGameRunnning={gameSettings.isGameRunning}
+        />
       </div>
 
       {/* Footer Section  */}
-      <div style={{ ...styles.footer }}>
-        <div></div>
-      </div>
+      <div style={{ ...styles.footer }}></div>
     </div>
   );
 };
@@ -170,7 +167,6 @@ const styles = {
     display: 'flex',
   },
   inputSection: {
-    flex: 1,
     backgroundColor: '#eddbca',
   },
   footer: {
