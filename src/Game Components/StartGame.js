@@ -3,7 +3,7 @@ import React from 'react';
 const StartGame = (props) => {
 
   return(
-    <div style={{flex: 1, display: 'flex', alignSelf: 'center', justifyContent: 'center', ...container}}>
+    <div style={styles.container}>
         <button style={styles.button} onClick={props.start}>Start</button>
     </div>
   )
@@ -16,6 +16,13 @@ const container = {
 }
 
 const styles = {
+  container: {
+    flex: 1, 
+    display: 'flex', 
+    alignSelf: 'center', 
+    justifyContent: 'center', 
+    ...container
+  }, 
   button: {
     borderWidth: 1,
     borderColor: 'black',

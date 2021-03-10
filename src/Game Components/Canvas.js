@@ -1,4 +1,8 @@
 import React from 'react';
+import ReactCardFlip from 'react-card-flip';
+import { Card } from '@material-ui/core';
+
+let seeWords = false
 
 const Canvas = (props) => {
   let areWordsVisible = false;
@@ -10,6 +14,8 @@ const Canvas = (props) => {
   //check if intervalElapsed is at the start of the reveal window then call updateCurrentWords
   if (intervalElapsed === 0) {
     props.updateCurrentWords();
+    console.log("IS WORDS VISIBLE TRUE OR FALSE:", areWordsVisible) // this is always false
+
   }
 
   //check if intervalElapsed within reveal length set areWordsVisible to true
@@ -31,6 +37,36 @@ const Canvas = (props) => {
     return <p>{word}</p>;
   });
 
-  return <div>{areWordsVisible ? words : <p>Can you Remember?!?!</p>}</div>;
+  return (
+    <div style={styles.container}>
+      <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
+        <Card style={styles.cardSize}>
+          <p>Can you remember?!?!?!</p>
+        </Card>
+        <Card style={styles.cardSize}>
+          {words}
+        </Card >
+      </ReactCardFlip>
+    </div>
+    
+  )
 };
+
+
+const styles = {
+  container: {
+    flex: 1, 
+    display: 'flex', 
+    alignSelf: 'center', 
+    justifyContent: 'center', 
+  }, 
+  cardSize: {
+    minHeight: 300,
+    minWidth: 200, 
+    backgroundColor: 'transparent'
+  },
+
+}
+
+
 export default Canvas;
