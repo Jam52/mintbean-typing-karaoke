@@ -7,7 +7,7 @@ import LandingPage from './Game Components/LandingPage';
 function App() {
   return (
     <div style={styles.fullWindow}>
-      <h1>Memory Maddening</h1>
+      <h1 style={styles.title}>Memory Maddening</h1>
       <Router>
         <Switch>
           <Route exact path="/game" component={GamePage} />
@@ -23,7 +23,13 @@ const styles = {
     display: 'flex', 
     flex: 1, 
     flexDirection: 'column', 
-    height: '100vh' 
+    height: '100vh', 
+    backgroundColor: '#182436', 
+    
+  },
+  title: {
+    textAlign: 'center',
+    color: '#b88888'
   }
 }
 

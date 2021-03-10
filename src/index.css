@@ -28,3 +28,11 @@ code {
   color: black;
 }
 
+a {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 207, 207, 0.8);
+}
