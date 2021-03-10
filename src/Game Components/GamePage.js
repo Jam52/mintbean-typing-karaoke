@@ -10,6 +10,9 @@ import {
   currentWordsArray,
   correctWordsArray,
   updateCurrentWords,
+  score,
+  userInput,
+  setUserInput,
 } from './gameData';
 
 const GamePage = () => {
@@ -21,11 +24,10 @@ const GamePage = () => {
     numWordsRevealed: 1,
     isGameRunning: false,
   });
-  // const [correctWordsArray, setCorrectWords] = useState([]);
-  const [score, setScore] = useState(0);
-  const [userInput, setUserInput] = useState('');
   const [isGameFinished, setIsGameFinished] = useState(false);
-  const [cat, setCat] = useState("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/June_odd-eyed-cat_cropped.jpg/1424px-June_odd-eyed-cat_cropped.jpg")
+  const [cat, setCat] = useState(
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/June_odd-eyed-cat_cropped.jpg/1424px-June_odd-eyed-cat_cropped.jpg',
+  );
 
   // useCountDown hook, initial values of 30 seconds (30000 milliseconds) and increments of 100 milliseconds, timeleft will be in milliseconds
   const [timeLeft, { start, pause, resume, reset }] = useCountDown(30000, 100);
@@ -51,17 +53,15 @@ const GamePage = () => {
     updateCurrentWords(wordsData, gameSettings.numWordsRevealed);
   };
 
-
-
   return (
     <div style={styles.content}>
-      <div style={{ ...styles.top}}>
+      <div style={{ ...styles.top }}>
         {/* Top of page  Score, link to landing page, and settings*/}
 
         {/* Score section */}
-        <div style={{ flex: 4}}>
-          <p style={{ ...styles.score}}>
-            <Score score={score}/>
+        <div style={{ flex: 4 }}>
+          <p style={{ ...styles.score }}>
+            <Score score={score} />
           </p>
         </div>
 
@@ -74,16 +74,24 @@ const GamePage = () => {
         </div>
 
         {/* Link to Landing Page */}
-        <div style={{ flex: 3, display: 'flex', flexDirection: 'column', textAlign: 'right'}}>
-            <Link to="/about" >
-              <p style={styles.aboutLink}>About Us</p>
-            </Link>
-  
+        <div
+          style={{
+            flex: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            textAlign: 'right',
+          }}
+        >
+          <Link to="/about">
+            <p style={styles.aboutLink}>About Us</p>
+          </Link>
         </div>
 
         {/* Settings Section */}
-        <div style={{ flex: 1, display: 'flex'}}>
-          <p style={{ ...styles.link, textAlign: 'right', paddingRight: 15}}>Settings</p>
+        <div style={{ flex: 1, display: 'flex' }}>
+          <p style={{ ...styles.link, textAlign: 'right', paddingRight: 15 }}>
+            Settings
+          </p>
         </div>
       </div>
 
@@ -110,24 +118,23 @@ const GamePage = () => {
       <div style={{ ...styles.inputSection }}>
         <h3>Enter your words in the field below and press enter to submit</h3>
         {/* User Input Section */}
-        <div >
-          <Input
-            setUserInput={setUserInput}
-            userInput={userInput}
-            currentWordsArray={currentWordsArray}
-            correctWordsArray={correctWordsArray}
-            setScore={setScore}
-            score={score}
-            setCat={setCat}
-            cat={cat}
-          />
-        </div>
+
+        <Input
+          setUserInput={(input) => {
+            console.log('ingamepage: ' + input + userInput);
+            setUserInput(userInput + input);
+          }}
+          userInput={userInput}
+          currentWordsArray={currentWordsArray}
+          correctWordsArray={correctWordsArray}
+          setCat={setCat}
+          cat={cat}
+          isGameRunnning={gameSettings.isGameRunning}
+        />
       </div>
 
       {/* Footer Section  */}
-      <div style={{  ...styles.footer }}>
-        <div></div>
-      </div>
+      <div style={{ ...styles.footer }}></div>
     </div>
   );
 };
@@ -140,8 +147,7 @@ const styles = {
     flexDirection: 'column',
     borderTop: '1px solid black',
     backgroundColor: '#806b62',
-    color: 'white'
-
+    color: 'white',
   },
   top: {
     display: 'flex',
@@ -157,19 +163,18 @@ const styles = {
   },
   aboutLink: {
     color: 'white',
-    alignself: "right",
+    alignself: 'right',
   },
   gameSection: {
     flex: 7,
     display: 'flex',
   },
   inputSection: {
-    flex: 1,
-    backgroundColor: '#eddbca'
+    backgroundColor: '#eddbca',
   },
   footer: {
     flex: 0.5,
-    backgroundColor: '#182436'
+    backgroundColor: '#182436',
   },
   finalScore: {
     justifyContent: 'center',
