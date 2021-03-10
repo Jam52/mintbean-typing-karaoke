@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactCardFlip from 'react-card-flip';
+import { Card } from '@material-ui/core';
+
+let seeWords = false
 
 const Canvas = (props) => {
-  let [isFront, flip] = useState(true)
   let areWordsVisible = false;
 
   //shows how much time has passed since the start of the game
@@ -12,6 +14,8 @@ const Canvas = (props) => {
   //check if intervalElapsed is at the start of the reveal window then call updateCurrentWords
   if (intervalElapsed === 0) {
     props.updateCurrentWords();
+    console.log("IS WORDS VISIBLE TRUE OR FALSE:", areWordsVisible) // this is always false
+
   }
 
   //check if intervalElapsed within reveal length set areWordsVisible to true
@@ -34,15 +38,35 @@ const Canvas = (props) => {
   });
 
   return (
-    <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
-        <div>
+    <div style={styles.container}>
+      <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
+        <Card style={styles.cardSize}>
           {words}
-        </div>
-        <div>
+        </Card>
+        <Card style={styles.cardSize}>
           <p>Can you remember?!?!?!</p>
-        </div>
+        </Card >
       </ReactCardFlip>
+    </div>
+    
   )
-  // <div>{areWordsVisible ? words : <p>Can you Remember?!?!</p>}</div>;
 };
+
+
+const styles = {
+  container: {
+    flex: 1, 
+    display: 'flex', 
+    alignSelf: 'center', 
+    justifyContent: 'center', 
+  }, 
+  cardSize: {
+    minHeight: 300,
+    minWidth: 200, 
+    backgroundColor: 'transparent'
+  },
+
+}
+
+
 export default Canvas;
