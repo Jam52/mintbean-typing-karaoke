@@ -52,37 +52,38 @@ const GamePage = () => {
 
   return (
     <div style={styles.content}>
-      <div style={{ ...styles.top, ...styles.container }}>
+      <div style={{ ...styles.top}}>
         {/* Top of page  Score, link to landing page, and settings*/}
 
         {/* Score section */}
-        <div style={{ flex: 4, ...styles.container }}>
-          <p style={{ ...styles.score, ...styles.container }}>Score: 0</p>
+        <div style={{ flex: 4}}>
+          <p style={{ ...styles.score}}>Score: 0</p>
         </div>
 
         {/* Timer section */}
-        <div style={{ flex: 4, ...styles.container }}>
-          <p style={{ ...styles.score, ...styles.container }}>
+        <div style={{ flex: 4 }}>
+          <p style={{ ...styles.score }}>
             {Math.floor((timeLeft / 1000) % 60)}:
             {parseInt((timeLeft % 1000) / 10)}
           </p>
         </div>
 
         {/* Link to Landing Page */}
-        <div style={styles.container}>
-          <Link to="/about" style={{ flex: 1, ...styles.container }}>
-            Goes to landing page
-          </Link>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <Link to="/about" >
+              <p>About</p>
+            </Link>
+  
         </div>
 
         {/* Settings Section */}
-        <div style={{ flex: 1, ...styles.container }}>
-          <p style={{ ...styles.link, ...styles.container }}>settings</p>
+        <div style={{ flex: 1, display: 'flex'}}>
+          <p style={{ ...styles.link}}>settings</p>
         </div>
       </div>
 
       {/* Game content section */}
-      <div style={{ ...styles.container, ...styles.gameSection }}>
+      <div style={{ ...styles.gameSection }}>
           {isGameFinished ? (
             <Score score={score} />
           ) : gameSettings.isGameRunning ? (
@@ -98,9 +99,9 @@ const GamePage = () => {
           )}
       </div>
 
-      <div style={{ ...styles.container, ...styles.inputSection }}>
+      <div style={{ ...styles.inputSection }}>
         {/* User Input Section */}
-        <div style={styles.container}>
+        <div >
           <Input
             setUserInput={setUserInput}
             userInput={userInput}
@@ -112,8 +113,8 @@ const GamePage = () => {
       </div>
 
       {/* Footer Section  */}
-      <div style={{ ...styles.container, ...styles.footer }}>
-        <div style={styles.container}>Footer is here</div>
+      <div style={{  ...styles.footer }}>
+        <div>Footer is here</div>
       </div>
     </div>
   );
@@ -137,12 +138,6 @@ const styles = {
   link: {
     alignself: 'flex-end',
     flex: 1,
-  },
-  container: {
-    // to see the layout better
-    border: 1,
-    borderColor: 'black',
-    borderStyle: 'solid',
   },
   gameSection: {
     flex: 7,

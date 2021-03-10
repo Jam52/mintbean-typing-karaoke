@@ -8,12 +8,6 @@ const StartGame = (props) => {
     </div>
   )
 }
-const container = {
-  // to see the layout better 
-  border: 1,
-  borderColor: 'black',
-  borderStyle: 'solid'
-}
 
 const styles = {
   container: {
@@ -21,7 +15,7 @@ const styles = {
     display: 'flex', 
     alignSelf: 'center', 
     justifyContent: 'center', 
-    ...container
+
   }, 
   button: {
     borderWidth: 1,
