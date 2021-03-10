@@ -12,3 +12,13 @@ export const updateCurrentWords = (wordsData, numWordsNeeded) => {
   currentWordsArray = [...newCurrentWords];
   correctWordsArray = [...correctWordsArray, ...newCurrentWords];
 };
+
+export let userInput = '';
+export const setUserInput = (input) => {
+  userInput = input;
+};
+
+export let score = 0;
+export const setScore = (newScore) => {
+  score = newScore;
+};
