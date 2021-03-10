@@ -113,7 +113,7 @@ const GamePage = () => {
       </div>
 
       <div style={{ ...styles.inputSection }}>
-        <h3>Enter your words in the field below and press enter to submit</h3>
+        <h3 style={styles.inputPrompt}>Enter your words in the field below and press enter to submit</h3>
         {/* User Input Section */}
 
         <Input
@@ -167,7 +167,10 @@ const styles = {
     display: 'flex',
   },
   inputSection: {
-    backgroundColor: '#eddbca',
+    backgroundColor: '#182436',
+  },
+  inputPrompt: {
+    textAlign: 'center',
   },
   footer: {
     flex: 0.5,

@@ -32,8 +32,6 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 5px solid black;
-  border-radius: 1%;
   height: 10rem;
   color: black;
 }
