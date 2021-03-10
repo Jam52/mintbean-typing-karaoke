@@ -18,13 +18,14 @@ const GamePage = () => {
   const [gameSettings, setGameSettings] = useState({
     revealLength: 1000,
     revealIntervalLength: 3000,
-    numWordsRevealed: 2,
+    numWordsRevealed: 1,
     isGameRunning: false,
   });
   // const [correctWordsArray, setCorrectWords] = useState([]);
   const [score, setScore] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [isGameFinished, setIsGameFinished] = useState(false);
+  const [cat, setCat] = useState("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/June_odd-eyed-cat_cropped.jpg/1424px-June_odd-eyed-cat_cropped.jpg")
 
   // useCountDown hook, initial values of 30 seconds (30000 milliseconds) and increments of 100 milliseconds, timeleft will be in milliseconds
   const [timeLeft, { start, pause, resume, reset }] = useCountDown(30000, 100);
@@ -50,6 +51,8 @@ const GamePage = () => {
     updateCurrentWords(wordsData, gameSettings.numWordsRevealed);
   };
 
+
+
   return (
     <div style={styles.content}>
       <div style={{ ...styles.top}}>
@@ -58,7 +61,7 @@ const GamePage = () => {
         {/* Score section */}
         <div style={{ flex: 4}}>
           <p style={{ ...styles.score}}>
-            <Score />
+            <Score score={score}/>
           </p>
         </div>
 
@@ -102,14 +105,18 @@ const GamePage = () => {
       </div>
 
       <div style={{ ...styles.inputSection }}>
+        <h3>Enter your words in the field below and press enter to submit</h3>
         {/* User Input Section */}
         <div >
           <Input
             setUserInput={setUserInput}
             userInput={userInput}
+            currentWordsArray={currentWordsArray}
             correctWordsArray={correctWordsArray}
             setScore={setScore}
             score={score}
+            setCat={setCat}
+            cat={cat}
           />
         </div>
       </div>
