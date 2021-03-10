@@ -4,7 +4,9 @@ const StartGame = (props) => {
 
   return(
     <div style={styles.container}>
-        <button style={styles.button} onClick={props.start}>Start</button>
+        <button style={styles.button} onClick={props.start}>
+          <p style={{color: 'white'}}>Start Game</p>
+        </button>
     </div>
   )
 }
@@ -18,13 +20,17 @@ const styles = {
 
   }, 
   button: {
-    borderWidth: 1,
+    borderWidth: .5,
     borderColor: 'black',
     border: 'solid',
-    borderRadius: '50%',
+    borderRadius: '15%',
 
     height: 200, 
     width: 200,
+
+    color: '#131e2e',
+    backgroundColor: '#450909',
+    fontSize: 20
   }
 }
 

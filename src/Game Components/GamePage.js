@@ -57,28 +57,30 @@ const GamePage = () => {
 
         {/* Score section */}
         <div style={{ flex: 4}}>
-          <p style={{ ...styles.score}}>Score: 0</p>
+          <p style={{ ...styles.score}}>
+            <Score />
+          </p>
         </div>
 
         {/* Timer section */}
-        <div style={{ flex: 4 }}>
-          <p style={{ ...styles.score }}>
+        <div style={{ flex: 2 }}>
+          <p style={{ ...styles.score, textAlign: 'center' }}>
             {Math.floor((timeLeft / 1000) % 60)}:
             {parseInt((timeLeft % 1000) / 10)}
           </p>
         </div>
 
         {/* Link to Landing Page */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{ flex: 3, display: 'flex', flexDirection: 'column', textAlign: 'right'}}>
             <Link to="/about" >
-              <p>About</p>
+              <p style={styles.aboutLink}>About Us</p>
             </Link>
   
         </div>
 
         {/* Settings Section */}
         <div style={{ flex: 1, display: 'flex'}}>
-          <p style={{ ...styles.link}}>settings</p>
+          <p style={{ ...styles.link, textAlign: 'right', paddingRight: 15}}>Settings</p>
         </div>
       </div>
 
@@ -114,7 +116,7 @@ const GamePage = () => {
 
       {/* Footer Section  */}
       <div style={{  ...styles.footer }}>
-        <div>Footer is here</div>
+        <div></div>
       </div>
     </div>
   );
@@ -126,6 +128,10 @@ const styles = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
+    borderTop: '1px solid black',
+    backgroundColor: '#806b62',
+    color: 'white'
+
   },
   top: {
     display: 'flex',
@@ -139,15 +145,21 @@ const styles = {
     alignself: 'flex-end',
     flex: 1,
   },
+  aboutLink: {
+    color: 'white',
+    alignself: "right",
+  },
   gameSection: {
     flex: 7,
     display: 'flex',
   },
   inputSection: {
     flex: 1,
+    backgroundColor: '#eddbca'
   },
   footer: {
     flex: 0.5,
+    backgroundColor: '#182436'
   },
 };
 

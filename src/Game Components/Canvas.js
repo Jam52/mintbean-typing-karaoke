@@ -40,10 +40,10 @@ const Canvas = (props) => {
   return (
     <div style={styles.container}>
       <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
-        <Card style={styles.cardSize}>
+        <Card style={styles.cardSize} raised='true'>
           <p>Can you remember?!?!?!</p>
         </Card>
-        <Card style={styles.cardSize}>
+        <Card style={styles.cardSize} raised='true'>
           {words}
         </Card >
       </ReactCardFlip>
@@ -63,7 +63,7 @@ const styles = {
   cardSize: {
     minHeight: 300,
     minWidth: 200, 
-    backgroundColor: 'transparent'
+    backgroundColor: '#e4e8eb',
   },
 
 }
