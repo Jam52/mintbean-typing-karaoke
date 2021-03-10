@@ -97,19 +97,22 @@ const GamePage = () => {
 
       {/* Game content section */}
       <div style={{ ...styles.gameSection }}>
-        {isGameFinished ? (
-          <Score score={score} />
-        ) : gameSettings.isGameRunning ? (
-          <Canvas
-            currentWords={currentWordsArray}
-            gameSettings={gameSettings}
-            endGameHandler={endGameHandler}
-            updateCurrentWords={updateCurrentWordsHandler}
-            timeLeft={timeLeft}
-          />
-        ) : (
-          <StartGame start={gameStartHandler} />
-        )}
+          {isGameFinished ? (
+            <div style={styles.finalScore}>
+              <h1>Game End</h1>
+              <Score score={score} />
+            </div>
+          ) : gameSettings.isGameRunning ? (
+            <Canvas
+              currentWords={currentWordsArray}
+              gameSettings={gameSettings}
+              endGameHandler={endGameHandler}
+              updateCurrentWords={updateCurrentWordsHandler}
+              timeLeft={timeLeft}
+            />
+          ) : (
+            <StartGame start={gameStartHandler} />
+          )}
       </div>
 
       <div style={{ ...styles.inputSection }}>
@@ -176,6 +179,16 @@ const styles = {
     flex: 0.5,
     backgroundColor: '#182436',
   },
+  finalScore: {
+    justifyContent: 'center',
+    alignItems: 'center', 
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    fontSize: 25,
+
+    border: '1px black solid'
+  }
 };
 
 export default GamePage;

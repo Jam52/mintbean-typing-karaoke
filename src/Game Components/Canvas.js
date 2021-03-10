@@ -34,17 +34,23 @@ const Canvas = (props) => {
 
   //maps current words to <p>'s
   const words = props.currentWords.map((word) => {
-    return <p>{word}</p>;
+    return <p style={{...styles.cardText, ...styles.word}} >{word}</p>;
   });
 
   return (
     <div style={styles.container}>
-      <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal">
+      <ReactCardFlip isFlipped={areWordsVisible} flipDirection="horizontal" style={{flex:1, display: 'flex',    border: '1px solid black',}}>
         <Card style={styles.cardSize} raised='true'>
-          <p>Can you remember?!?!?!</p>
+          <div style={styles.cardInner}>
+            <p style={styles.cardText}>Can you</p>
+            <p style={styles.cardText}>Remember?</p>
+          </div>
+          
         </Card>
         <Card style={styles.cardSize} raised='true'>
-          {words}
+          <div style={styles.cardInner}>
+            {words} 
+          </div>
         </Card >
       </ReactCardFlip>
     </div>
@@ -63,8 +69,28 @@ const styles = {
   cardSize: {
     minHeight: 300,
     minWidth: 200, 
-    backgroundColor: '#e4e8eb',
+    backgroundColor: '#182436'
+    
   },
+  cardInner: {
+    border: '1px solid blue', 
+    flex: 1, 
+    margin: 10, 
+    height: 280, 
+    paddingTop: 70, 
+    boxSizing: 'border-box',
+    backgroundColor: '#e4e8eb'
+  },
+  cardText: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 700,
+    padding: 'auto'
+  }, 
+  word: {
+    paddingTop: 10,
+    fontSize: 30
+  }
 
 }
 
