@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Grid, Card, makeStyles, Avatar,  } from '@material-ui/core'
-// import { deepBlue } from '@material-ui/core/colors'
 import mona from './../mona.jpg'
 import jamie from './../jamie.jpeg'
 import scott from './../scott.jpg'
@@ -45,6 +44,7 @@ const LandingPage = () => {
 
             {/* Content Section  */}
             <div style={{ display: "flex", flexDirection: 'row'}}>
+              {/* Developer 1  */}
               <Grid container spacing={1} xs={12}>
                 <Grid item xs>
                     <Card className={classes.card} raised='true'>
@@ -71,6 +71,7 @@ const LandingPage = () => {
                     </Card>
                 </Grid>
 
+                {/* Developer 2 */}
                 <Grid item xs>
                   <Card className={classes.card} raised='true'>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'black'}}>
@@ -91,6 +92,7 @@ const LandingPage = () => {
                   </Card>
                 </Grid>
             
+                {/* Developer 3  */}
                 <Grid item xs>
                   <Card className={classes.card} raised='true'>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'black'}}>
@@ -121,8 +123,8 @@ const LandingPage = () => {
             <h2 style={{ paddingLeft: 20}}>The Game</h2>
             <div style={{...container}}>
               {/* Image goes here with link to game */}
-              <div style={{...container}}>
-                <Link to="/game">Goes to game page. Game page Image here</Link>
+              <div style={{...container, textAlign: 'center'}}>
+                <Link to="/game">Go to Game</Link>
               </div>
               {/* Game Information */}
               <div style={{...container}}>
@@ -155,6 +157,7 @@ const styles = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
+    height: '100vh'
 
   },
   innerContent: {
@@ -167,6 +170,7 @@ const styles = {
     fontSize: 14
   },
   footer: {
+    marginTop: 10, 
     flex: 0.5,
     backgroundColor: '#182436',
   },
