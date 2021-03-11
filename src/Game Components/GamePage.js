@@ -76,7 +76,7 @@ const GamePage = () => {
         {/* Link to Landing Page */}
         <div
           style={{
-            flex: 3,
+            flex: 3.8,
             display: 'flex',
             flexDirection: 'column',
             textAlign: 'right',
@@ -88,10 +88,11 @@ const GamePage = () => {
         </div>
 
         {/* Settings Section */}
-        <div style={{ flex: 1, display: 'flex' }}>
-          <p style={{ ...styles.link, textAlign: 'right', paddingRight: 15 }}>
+        <div style={{ flex: .2, display: 'flex' }}>
+          {/* Uncomment when working / creating */}
+          {/* <p style={{ ...styles.link, textAlign: 'right', paddingRight: 15 }}>
             Settings
-          </p>
+          </p> */}
         </div>
       </div>
 
