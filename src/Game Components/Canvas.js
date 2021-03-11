@@ -13,7 +13,7 @@ const Canvas = (props) => {
 
   //check if intervalElapsed is at the start of the reveal window then call updateCurrentWords
   if (intervalElapsed === 0) {
-    props.updateCurrentWords();
+    props.updateCurrentWordsHandler();
     console.log("IS WORDS VISIBLE TRUE OR FALSE:", areWordsVisible) // this is always false
 
   }
@@ -31,7 +31,7 @@ const Canvas = (props) => {
   if (props.timeLeft <= 0) {
     props.endGameHandler();
   }
-
+  
   //maps current words to <p>'s
   const words = props.currentWords.map((word) => {
     return <p style={{...styles.cardText, ...styles.word}} >{word}</p>;

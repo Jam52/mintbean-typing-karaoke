@@ -23,13 +23,13 @@ const styles = {
     borderWidth: .5,
     borderColor: 'black',
     border: 'solid',
-    borderRadius: '15%',
+    borderRadius: '50%',
 
     height: 200, 
     width: 200,
 
     color: '#131e2e',
-    backgroundColor: '#450909',
+    backgroundColor: '#182436',
     fontSize: 20
   }
 }

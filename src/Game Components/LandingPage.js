@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   card: {
+    marginLeft: 10,
     minHeight: '50%',
     maxHeight: '100%',
     padding: theme.spacing(2),
@@ -48,8 +49,8 @@ const LandingPage = () => {
             <div style={{ display: 'flex', flexDirection: 'row' }}>
               {/* Developer 1  */}
               <Grid container spacing={1} xs={12}>
-                <Grid item xs>
-                  <Card className={classes.card} raised="true">
+                <Grid item={true} xs={4}>
+                    <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
                         flex: 1,
@@ -116,8 +117,8 @@ const LandingPage = () => {
                 </Grid>
 
                 {/* Developer 2 */}
-                <Grid item xs>
-                  <Card className={classes.card} raised="true">
+                <Grid item={true} xs={4}>
+                  <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
                         flex: 1,
@@ -132,6 +133,7 @@ const LandingPage = () => {
                       {/* Name goes here  */}
                       <h3>Mona Zheng</h3>
                       {/* github link and portfolio link here  */}
+                      <div style={{display: 'flex'}}>
                       <a
                         target="_blank"
                         href="https://github.com/catmemberMona"
@@ -139,20 +141,35 @@ const LandingPage = () => {
                         <Avatar
                           alt="github"
                           src={github}
-                          className={{ ...classes.small }}
+                          className={classes.small}
                         />
                       </a>
+                        <a 
+                        target="_blank" 
+                        href="https://www.linkedin.com/in/mona-a-zheng/"
+                        >                    
+                          <Avatar 
+                          alt="linkedin" 
+                          src={linkedIn}
+                          className={classes.small} 
+                          >L</Avatar>
+                        </a>
+                      </div>
+                      
+                      
                       {/* about person here  */}
-                      <div>
-                        <p>Hello allll!</p>
+                      <div style={styles.aboutText}>
+                        <p>Hello my dear visitors.</p>
+                        <p>I completed the Grace Hopper Program at FullStack Academy, and I'm currently looking for work. Contact me!</p>
+                        <p>This is my first hackathon (learnathon). I can definitely say that I had lots of fun and learned a lot.</p>
                       </div>
                     </div>
                   </Card>
                 </Grid>
 
                 {/* Developer 3  */}
-                <Grid item xs>
-                  <Card className={classes.card} raised="true">
+                <Grid item={true} xs={4}>
+                  <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
                         flex: 1,
@@ -171,32 +188,22 @@ const LandingPage = () => {
                       {/* Name goes here  */}
                       <h3>Scott Beckett</h3>
                       {/* github link and portfolio link here  */}
-                      <a target="_blank" href="https://github.com/saxlbeckett">
-                        <Avatar
-                          alt="github"
-                          src={github}
-                          className={classes.small}
-                        />
-                      </a>
+                      <div style={{display: 'flex'}}>
+                        <a target="_blank" href="https://github.com/saxlbeckett">                    
+                          <Avatar 
+                          alt="github" 
+                          src={github} 
+                          className={classes.small} />
+                        </a>
+                      </div>
                       {/* about person here  */}
                       <div style={styles.aboutText}>
-                        <p>
-                          I am a registered sleep EEG technician and clinical
-                          sleep educator who has a long history of research data
-                          management and recording music.
-                        </p>
-                        <p>
-                          I have just graduated from cohort #31 at Launch
-                          Academy Boston to learn Fullstack web development in
-                          JavaScript!
-                        </p>
-                        <p>
-                          SPECIALTIES: SQL, JavaScript, React, Express,
-                          Handlebars, Cascading Style Sheets (CSS), Databases,
-                          ES6, GitHub, HTML5, JSON, PostgreSQL, Node.js, Matlab,
-                          OriginLab, Jest, Cypress, Knex, Objection, Web audio
-                          API, Tone.js library, Foundation, Semantic UI, AWS-S3.
-                        </p>
+                        <p>I am a registered sleep EEG technician and clinical sleep educator who has 
+                          a long history of research data management and recording music.</p>
+                        <p>I have just graduated from cohort #31 at Launch Academy Boston 
+                          to learn Fullstack web development in JavaScript!</p>
+                       {/* Hackaton experience Here */}
+                        <p>I have never made a game before! This was a great learning experience</p>
                       </div>
                     </div>
                   </Card>
@@ -229,10 +236,18 @@ const LandingPage = () => {
               <Link to="/game" className="btn">
                 Go to Game
               </Link>
+              {/* Game Information */}
+              <div >
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1C7_Ut-b2uk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style={{fontFamily: 'Helvetica Neue'}}>Mintbean Typing Karaoke<br/>
+                  This project is part of a hackerthon organised by [Mintbean](https://www.mintbean.io/).<br/>
+                  This hackerthon is to build a typing game with a focus on processing keyboard input and how to handle keyboard events.</p>
+              </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
 
       {/* Footer Section  */}
       <div style={styles.footer}></div>
@@ -240,9 +255,9 @@ const LandingPage = () => {
   );
 };
 
-const container = {
-  border: '1px black solid',
-};
+// const container = {
+//   border: '1px black solid',
+// };
 
 const styles = {
   content: {
@@ -256,6 +271,15 @@ const styles = {
     flex: 7.5,
     // display: 'flex'
   },
+  cardContent: {
+    flex: 1, 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    color: 'black', 
+    minHeight: 500,
+    minWidth: 200
+  }, 
   aboutText: {
     textAlign: 'left',
     padding: 8,

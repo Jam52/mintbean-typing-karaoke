@@ -36,7 +36,7 @@ code {
   text-align: center;
   position: relative;
   background-color: blanchedalmond;
-  height: 8rem;
+  height: 5rem;
   width: 800px;
   font-size: 24pt;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -45,6 +45,7 @@ code {
   border: 2px solid white;
   border-radius: 50px;
   align-self: 'center';
+  overflow: hidden;
 }
 .inputButton {
   position: absolute;
@@ -55,7 +56,7 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10rem;
+  height: 7rem;
   color: black;
 }
 
