@@ -4,6 +4,10 @@ This project is part of a hackerthon organised by [Mintbean](https://www.mintbea
 
 This hackerthon is to build a typing game with a focus on processing keyboard input and how to handle keyboard events.
 
+## Demo
+You can demo the game here: 
+[Memory-Maddening](https://memorymaddening.herokuapp.com/about)
+
 ## Team
 
 The project is a collaboration between:
