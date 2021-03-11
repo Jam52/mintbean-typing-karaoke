@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   card: {
+    marginLeft: 10,
     minHeight: '50%',
     maxHeight: '100%',
     padding: theme.spacing(2),
@@ -48,7 +49,7 @@ const LandingPage = () => {
               <Grid container spacing={1} xs={12}>
                 <Grid item xs>
                     <Card className={classes.card} raised='true'>
-                      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'black'}}>
+                      <div style={styles.cardContent}>
                         {/* Image goes on top */}
                         <Avatar alt="jamie" src={jamie} className={classes.large} />
                         {/* Name goes here  */}
@@ -64,8 +65,9 @@ const LandingPage = () => {
                         </div>
                         
                         {/* about person here  */}
-                        <div>
+                        <div style={styles.aboutText}>
                           <p>Hello allll!</p>
+                          <p>ahhh</p>
                         </div>
                       </div>
                     </Card>
@@ -74,18 +76,26 @@ const LandingPage = () => {
                 {/* Developer 2 */}
                 <Grid item xs>
                   <Card className={classes.card} raised='true'>
-                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'black'}}>
+                    <div style={styles.cardContent}>
                       {/* Image goes on top */}
                       <Avatar alt="Mona" src={mona} className={classes.large} />
                       {/* Name goes here  */}
                       <h3>Mona Zheng</h3>
                       {/* github link and portfolio link here  */}
-                      <a target="_blank" href="https://github.com/catmemberMona">                    
-                        <Avatar alt="github" src={github} className={{...classes.small}} />
-                      </a>
+                      <div style={{display: 'flex'}}>
+                        <a target="_blank" href="https://github.com/catmemberMona">                    
+                          <Avatar alt="github" src={github} className={classes.small} />
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/mona-a-zheng/">                    
+                          <Avatar alt="linkedin" className={classes.small} style={{backgroundColor: '#182436'}}>L</Avatar>
+                        </a>
+                      </div>
+                      
                       {/* about person here  */}
-                      <div>
-                        <p>Hello allll!</p>
+                      <div style={styles.aboutText}>
+                        <p>Hello my dear visitors.</p>
+                        <p>I completed the Grace Hopper Program at FullStack Academy, and I'm currently looking for work. Contact me!</p>
+                        <p>This is my first hackathon (learnathon). I can definitely say that I had lots of fun and learned a lot.</p>
                       </div>
                     </div>
                     
@@ -95,20 +105,23 @@ const LandingPage = () => {
                 {/* Developer 3  */}
                 <Grid item xs>
                   <Card className={classes.card} raised='true'>
-                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'black'}}>
+                    <div style={styles.cardContent}>
                       {/* Image goes on top */}
                       <Avatar alt="scott" src={scott} className={classes.large} />
                       {/* Name goes here  */}
                       <h3>Scott Beckett</h3>
                       {/* github link and portfolio link here  */}
-                      <a target="_blank" href="https://github.com/saxlbeckett">                    
-                        <Avatar alt="github" src={github} className={classes.small} />
-                      </a>
+                      <div style={{display: 'flex'}}>
+                        <a target="_blank" href="https://github.com/saxlbeckett">                    
+                          <Avatar alt="github" src={github} className={classes.small} />
+                        </a>
+                      </div>
                       {/* about person here  */}
                       <div style={styles.aboutText}>
                         <p>I am a registered sleep EEG technician and clinical sleep educator who has a long history of research data management and recording music.</p>
                         <p>I have just graduated from cohort #31 at Launch Academy Boston to learn Fullstack web development in JavaScript!</p>
-                        <p>SPECIALTIES: SQL, JavaScript, React, Express, Handlebars, Cascading Style Sheets (CSS), Databases, ES6, GitHub, HTML5, JSON, PostgreSQL,  Node.js, Matlab, OriginLab, Jest, Cypress, Knex, Objection, Web audio API, Tone.js library, Foundation, Semantic UI, AWS-S3.</p>
+                        {/* Hackaton experience Here */}
+                        {/* <p></p> */}
                       </div>
                     </div>
                   </Card>
@@ -164,10 +177,20 @@ const styles = {
     flex: 7.5,
     // display: 'flex'
   },
+  cardContent: {
+    flex: 1, 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    color: 'black', 
+    height: 500,
+    minWidth: 200
+  }, 
   aboutText: {
     textAlign: 'left',
     padding: 8,
-    fontSize: 14
+    fontSize: 14,
+    // height: 500 
   },
   footer: {
     marginTop: 10, 
