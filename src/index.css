@@ -7,6 +7,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  width: 90vw;
+  margin: auto;
+}
+.btn {
+  padding: 1em 3em;
+  background-color: rgb(80, 65, 182);
+  color: white;
+  border-radius: 0.5rem;
+  max-width: 10rem;
+  text-align: center;
+}
+
+.para {
+  max-width: 70ch;
+}
+/* --_--END----- */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -54,3 +74,19 @@ button:focus {
   border-radius: 15px;
   border: 2px solid white;
 }
+
+/* Section Classes */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 0 0 2px rgba(255, 207, 207, 0.8);
+  text-align: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.game-info > * + * {
+  margin-top: 1rem;
+}
+/*----END----*/
