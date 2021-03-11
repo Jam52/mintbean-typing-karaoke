@@ -10,7 +10,7 @@ import {
 const Input = (props) => {
   useEffect(() => {
     window.addEventListener('keydown', eventHandler);
-    return () => window.removeEventListener('keydown', (event) => {});
+    return () => window.removeEventListener('keydown', eventHandler);
   }, []);
 
   const eventHandler = (event) => {
