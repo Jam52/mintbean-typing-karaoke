@@ -8,7 +8,7 @@ export const updateCurrentWords = (wordsData, numWordsNeeded) => {
     const randomWord = wordsData[Math.floor(Math.random() * wordsData.length)];
     newCurrentWords.push(randomWord);
   }
-  //console.log(newCurrentWords);
+  console.log(newCurrentWords);
   currentWordsArray = [...newCurrentWords];
   correctWordsArray = [...correctWordsArray, ...newCurrentWords];
 };
