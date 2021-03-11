@@ -195,6 +195,16 @@ const LandingPage = () => {
                           src={github} 
                           className={classes.small} />
                         </a>
+                        <a 
+                        target="_blank" 
+                        href="https://www.linkedin.com/in/scott-beckett-rpsgt-ccsh/"
+                        >                    
+                          <Avatar 
+                          alt="linkedin" 
+                          src={linkedIn}
+                          className={classes.small} 
+                          >L</Avatar>
+                        </a>
                       </div>
                       {/* about person here  */}
                       <div style={styles.aboutText}>
