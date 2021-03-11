@@ -52,8 +52,8 @@ const GamePage = () => {
     let copyRevealIntervalLength = gameSettings.revealIntervalLength
     let copyWordLength = gameSettings.wordLength
     setGameSettings({
-      revealLength: copyRevealLength -= 50,
-      revealIntervalLength: copyRevealIntervalLength -= 30,
+      revealLength: copyRevealLength,
+      revealIntervalLength: copyRevealIntervalLength,
       wordLength: copyWordLength += 2,
       isGameRunning: false,
       numWordsRevealed: 1

@@ -31,7 +31,7 @@ const Canvas = (props) => {
   if (props.timeLeft <= 0) {
     props.endGameHandler();
   }
-
+  
   //maps current words to <p>'s
   const words = props.currentWords.map((word) => {
     return <p style={{...styles.cardText, ...styles.word}} >{word}</p>;
