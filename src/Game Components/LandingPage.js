@@ -50,7 +50,7 @@ const LandingPage = () => {
               {/* Developer 1  */}
               <Grid container spacing={1} xs={12}>
                 <Grid item={true} xs={4}>
-                    <Card className={classes.card} raised={true}>
+                    <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
                         flex: 1,
@@ -118,7 +118,7 @@ const LandingPage = () => {
 
                 {/* Developer 2 */}
                 <Grid item={true} xs={4}>
-                  <Card className={classes.card} raised={true}>
+                  <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
                         flex: 1,
@@ -141,7 +141,7 @@ const LandingPage = () => {
                         <Avatar
                           alt="github"
                           src={github}
-                          className={{ ...classes.small }}
+                          className={classes.small}
                         />
                       </a>
                         <a 
@@ -150,8 +150,8 @@ const LandingPage = () => {
                         >                    
                           <Avatar 
                           alt="linkedin" 
+                          src={linkedIn}
                           className={classes.small} 
-                          style={{backgroundColor: '#182436'}}
                           >L</Avatar>
                         </a>
                       </div>
@@ -169,7 +169,7 @@ const LandingPage = () => {
 
                 {/* Developer 3  */}
                 <Grid item={true} xs={4}>
-                  <Card className={classes.card} raised={true}>
+                  <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
                         flex: 1,
@@ -269,7 +269,7 @@ const styles = {
     flexDirection: 'column', 
     alignItems: 'center', 
     color: 'black', 
-    height: 500,
+    minHeight: 500,
     minWidth: 200
   }, 
   aboutText: {
