@@ -186,8 +186,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     fontSize: 25,
-
-    border: '1px black solid'
   }
 };
 
