@@ -13,7 +13,7 @@ const Canvas = (props) => {
 
   //check if intervalElapsed is at the start of the reveal window then call updateCurrentWords
   if (intervalElapsed === 0) {
-    props.updateCurrentWords();
+    props.updateCurrentWordsHandler();
     console.log("IS WORDS VISIBLE TRUE OR FALSE:", areWordsVisible) // this is always false
 
   }

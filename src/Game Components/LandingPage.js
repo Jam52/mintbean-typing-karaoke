@@ -202,8 +202,8 @@ const LandingPage = () => {
                           a long history of research data management and recording music.</p>
                         <p>I have just graduated from cohort #31 at Launch Academy Boston 
                           to learn Fullstack web development in JavaScript!</p>
-                        {/* Hackaton experience Here */}
-                        {/* <p></p> */}
+                       {/* Hackaton experience Here */}
+                        <p>I have never made a game before! This was a great learning experience</p>
                       </div>
                     </div>
                   </Card>
@@ -236,10 +236,18 @@ const LandingPage = () => {
               <Link to="/game" className="btn">
                 Go to Game
               </Link>
+              {/* Game Information */}
+              <div >
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1C7_Ut-b2uk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style={{fontFamily: 'Helvetica Neue'}}>Mintbean Typing Karaoke<br/>
+                  This project is part of a hackerthon organised by [Mintbean](https://www.mintbean.io/).<br/>
+                  This hackerthon is to build a typing game with a focus on processing keyboard input and how to handle keyboard events.</p>
+              </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
 
       {/* Footer Section  */}
       <div style={styles.footer}></div>
@@ -247,9 +255,9 @@ const LandingPage = () => {
   );
 };
 
-const container = {
-  border: '1px black solid',
-};
+// const container = {
+//   border: '1px black solid',
+// };
 
 const styles = {
   content: {
