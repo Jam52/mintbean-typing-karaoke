@@ -112,7 +112,7 @@ const GamePage = () => {
       <div style={{ ...styles.gameSection }}>
           {isGameFinished ? (
             <div style={styles.finalScore}>
-              <h1>Play Again?</h1>
+              <h1>Next Level?</h1>
               <StartGame start={gameStartHandler} />
               <Score score={score} />
             </div>
