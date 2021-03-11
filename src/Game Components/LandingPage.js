@@ -207,15 +207,28 @@ const LandingPage = () => {
           </div>
 
           {/* Game Info Section  */}
-          <div style={{ flex: 2 }}>
+          <div style={{ flex: 2 }} className="container">
             <h2 style={{ paddingLeft: 20 }}>The Game</h2>
-            <div style={{ ...container }}>
+            {/* Game Information */}
+            <div className="game-info">
+              <h3>The challange</h3>
+              <p className="para">
+                To create a typing game, Not only do typing games require you to
+                process a large amount of keyboard input, but there are so many
+                different ways you can make it even better! Come learn how to
+                handle keyboard events like a pro!
+              </p>
+              <p className="para">
+                Working as a team we split the task up, creating a kanban board
+                on github projects in order to better organize and distribute
+                the work. It was a fantastic exersize with a great anount of
+                learning, both learning from the new technologies the task
+                exposed us to but also from our teamates.
+              </p>
               {/* Image goes here with link to game */}
-              <div style={{ ...container, textAlign: 'center' }}>
-                <Link to="/game">Go to Game</Link>
-              </div>
-              {/* Game Information */}
-              <div style={{ ...container }}></div>
+              <Link to="/game" className="btn">
+                Go to Game
+              </Link>
             </div>
           </div>
         </div>
