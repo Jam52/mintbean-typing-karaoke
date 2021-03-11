@@ -47,8 +47,8 @@ const LandingPage = () => {
             <div style={{ display: "flex", flexDirection: 'row'}}>
               {/* Developer 1  */}
               <Grid container spacing={1} xs={12}>
-                <Grid item xs>
-                    <Card className={classes.card} raised='true'>
+                <Grid item={true} xs={4}>
+                    <Card className={classes.card} raised={true}>
                       <div style={styles.cardContent}>
                         {/* Image goes on top */}
                         <Avatar alt="jamie" src={jamie} className={classes.large} />
@@ -74,8 +74,8 @@ const LandingPage = () => {
                 </Grid>
 
                 {/* Developer 2 */}
-                <Grid item xs>
-                  <Card className={classes.card} raised='true'>
+                <Grid item={true} xs={4}>
+                  <Card className={classes.card} raised={true}>
                     <div style={styles.cardContent}>
                       {/* Image goes on top */}
                       <Avatar alt="Mona" src={mona} className={classes.large} />
@@ -103,8 +103,8 @@ const LandingPage = () => {
                 </Grid>
             
                 {/* Developer 3  */}
-                <Grid item xs>
-                  <Card className={classes.card} raised='true'>
+                <Grid item={true} xs={4}>
+                  <Card className={classes.card} raised={true}>
                     <div style={styles.cardContent}>
                       {/* Image goes on top */}
                       <Avatar alt="scott" src={scott} className={classes.large} />
