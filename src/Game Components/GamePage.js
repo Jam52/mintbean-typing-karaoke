@@ -22,6 +22,7 @@ const GamePage = () => {
     revealLength: 1000,
     revealIntervalLength: 3000,
     numWordsRevealed: 1,
+    wordLength: 4,
     isGameRunning: false,
   });
   const [isGameFinished, setIsGameFinished] = useState(false);
@@ -36,7 +37,8 @@ const GamePage = () => {
 
   //Sets wordsData, updates Game Settings(can be expanded), Starts timer starts listener for keybord input
   const gameStartHandler = async () => {
-    const wordDataFromApi = await fetchRandomWords(4);
+    const wordDataFromApi = await fetchRandomWords(gameSettings.wordLength);
+    console.log("word Data from API", wordDataFromApi);
     setWordsData(wordDataFromApi);
     start();
     setGameSettings({ ...gameSettings, isGameRunning: true });
@@ -46,6 +48,16 @@ const GamePage = () => {
   //endGameHandler sets isGameFinished to true which will display the score component
   const endGameHandler = () => {
     setIsGameFinished(true);
+    let copyRevealLength = gameSettings.revealLength
+    let copyRevealIntervalLength = gameSettings.revealIntervalLength
+    let copyWordLength = gameSettings.wordLength
+    setGameSettings({
+      revealLength: copyRevealLength -= 50,
+      revealIntervalLength: copyRevealIntervalLength -= 30,
+      wordLength: copyWordLength += 2,
+      isGameRunning: false,
+      numWordsRevealed: 1
+    })
   };
 
   //updateCurrentWordsHandler function to add correct word to array
@@ -99,7 +111,8 @@ const GamePage = () => {
       <div style={{ ...styles.gameSection }}>
           {isGameFinished ? (
             <div style={styles.finalScore}>
-              <h1>Game End</h1>
+              <h1>Play Again?</h1>
+              <StartGame start={gameStartHandler} />
               <Score score={score} />
             </div>
           ) : gameSettings.isGameRunning ? (
@@ -107,8 +120,10 @@ const GamePage = () => {
               currentWords={currentWordsArray}
               gameSettings={gameSettings}
               endGameHandler={endGameHandler}
-              updateCurrentWords={updateCurrentWordsHandler}
+              updateCurrentWordsHandler={updateCurrentWordsHandler}
               timeLeft={timeLeft}
+              wordsData={wordsData}
+              numWordsRevealed={gameSettings.numWordsRevealed}
             />
           ) : (
             <StartGame start={gameStartHandler} />

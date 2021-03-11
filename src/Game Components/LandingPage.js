@@ -106,9 +106,7 @@ const LandingPage = () => {
                       </a>
                       {/* about person here  */}
                       <div style={styles.aboutText}>
-                        <p>I am a registered sleep EEG technician and clinical sleep educator who has a long history of research data management and recording music.</p>
-                        <p>I have just graduated from cohort #31 at Launch Academy Boston to learn Fullstack web development in JavaScript!</p>
-                        <p>SPECIALTIES: SQL, JavaScript, React, Express, Handlebars, Cascading Style Sheets (CSS), Databases, ES6, GitHub, HTML5, JSON, PostgreSQL,  Node.js, Matlab, OriginLab, Jest, Cypress, Knex, Objection, Web audio API, Tone.js library, Foundation, Semantic UI, AWS-S3.</p>
+                        <p>I have never made a game before! This was a great learning experience</p>
                       </div>
                     </div>
                   </Card>
@@ -128,7 +126,10 @@ const LandingPage = () => {
               </div>
               {/* Game Information */}
               <div style={{...container}}>
-
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1C7_Ut-b2uk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p style={{fontFamily: 'Helvetica Neue'}}>Mintbean Typing Karaoke<br/>
+                  This project is part of a hackerthon organised by [Mintbean](https://www.mintbean.io/).<br/>
+                  This hackerthon is to build a typing game with a focus on processing keyboard input and how to handle keyboard events.</p>
               </div>
               </div>
             </div>
