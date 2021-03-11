@@ -12,9 +12,9 @@ You can demo the game here:
 
 The project is a collaboration between:
 
-Jamie Sajdak - [Github](https://github.com/Jam52) / [Portfolio](https://www.jamiesajdak.com/)\
-Scott Beckett - [Github](https://github.com/saxlbeckett) / [Audio Notepad](https://audio-notepad.herokuapp.com/)\
-Mona Zheng - [Github](https://github.com/catmemberMona)
+Jamie Sajdak - [Github](https://github.com/Jam52) / [Portfolio](https://www.jamiesajdak.com/) / [LinkedIn](https://www.linkedin.com/in/jamie-sajdak-07559237/)\
+Scott Beckett - [Github](https://github.com/saxlbeckett) / [Audio Notepad](https://audio-notepad.herokuapp.com/) / [LinkedIn](https://www.linkedin.com/in/scott-beckett-rpsgt-ccsh/)\
+Mona Zheng - [Github](https://github.com/catmemberMona) / [LinkedIn](https://www.linkedin.com/in/mona-a-zheng/)
 
 ## Available Scripts
 
