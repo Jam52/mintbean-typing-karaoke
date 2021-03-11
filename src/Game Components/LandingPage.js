@@ -5,6 +5,7 @@ import mona from './../mona.jpg';
 import jamie from './../jamie.jpeg';
 import scott from './../scott.jpg';
 import github from './../github.png';
+import linkedIn from './../linkedin.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +37,7 @@ const LandingPage = () => {
       <div style={styles.innerContent}>
         <h1 style={{ textAlign: 'center' }}>About Us</h1>
         <div
-          style={{ flex: 1, display: 'flex', flexDirection: 'row' }}
+          style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
           className="container"
         >
           {/* Developers Seciton  */}
@@ -72,6 +73,13 @@ const LandingPage = () => {
                           <Avatar
                             alt="github"
                             src={github}
+                            className={classes.small}
+                          />
+                        </a>
+                        <a target="_blank" href="https://github.com/Jam52">
+                          <Avatar
+                            alt="linkedIn"
+                            src={linkedIn}
                             className={classes.small}
                           />
                         </a>
