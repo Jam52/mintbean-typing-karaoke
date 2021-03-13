@@ -66,7 +66,7 @@ const Input = (props) => {
     <div className="inputBox">
       <img className="cat" src={props.cat} alt="an image of a cat"></img>
       <div className="inputValue">
-        <p>{userInput}</p>
+        <p style={{marginTop: 20}}>{userInput}</p>
       </div>
       <img className="cat" src={props.cat} alt="an image of a cat"></img>
     </div>

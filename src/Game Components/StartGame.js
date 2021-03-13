@@ -5,7 +5,7 @@ const StartGame = (props) => {
   return(
     <div style={styles.container}>
         <button style={styles.button} onClick={props.start}>
-          <p style={{color: 'white'}}>Start Game</p>
+          <p style={{color: 'white'}}>Start</p>
         </button>
     </div>
   )
