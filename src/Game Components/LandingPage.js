@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(14),
     height: theme.spacing(14),
     marginTop: theme.spacing(2),
-    border: '1px solid',
+    border: '1px grey solid',
   },
 }));
 
@@ -48,8 +48,8 @@ const LandingPage = () => {
             {/* Content Section  */}
             <div style={{ display: 'flex', flexDirection: 'row' }}>
               {/* Developer 1  */}
-              <Grid container spacing={1} xs={12}>
-                <Grid item={true} xs={4}>
+              <Grid container spacing={1}>
+                <Grid item={true} lg={4} md={4} sm={6} xs={12}>
                     <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
@@ -117,7 +117,7 @@ const LandingPage = () => {
                 </Grid>
 
                 {/* Developer 2 */}
-                <Grid item={true} xs={4}>
+                <Grid item={true} lg={4} md={4} sm={6} xs={12}>
                   <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
@@ -168,7 +168,7 @@ const LandingPage = () => {
                 </Grid>
 
                 {/* Developer 3  */}
-                <Grid item={true} xs={4}>
+                <Grid item={true} lg={4} md={4} sm={12} xs={12}>
                   <Card className={classes.card} raised={true} style={styles.cardContent}>
                     <div
                       style={{
@@ -248,7 +248,7 @@ const LandingPage = () => {
               </Link>
               {/* Game Information */}
               <div >
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1C7_Ut-b2uk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="450" height="275" src="https://www.youtube.com/embed/1C7_Ut-b2uk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <p style={{fontFamily: 'Helvetica Neue'}}>Mintbean Typing Karaoke<br/>
                   This project is part of a hackerthon organised by [Mintbean](https://www.mintbean.io/).<br/>
                   This hackerthon is to build a typing game with a focus on processing keyboard input and how to handle keyboard events.</p>
@@ -260,7 +260,7 @@ const LandingPage = () => {
 
 
       {/* Footer Section  */}
-      <div style={styles.footer}></div>
+      {/* <div style={styles.footer}></div> */}
     </div>
   );
 };
@@ -287,7 +287,7 @@ const styles = {
     flexDirection: 'column', 
     alignItems: 'center', 
     color: 'black', 
-    minHeight: 500,
+    minHeight: 550,
     minWidth: 200
   }, 
   aboutText: {
@@ -295,10 +295,10 @@ const styles = {
     padding: 8,
     fontSize: 14,
   },
-  footer: {
-    marginTop: 10,
-    flex: 0.5,
-    backgroundColor: '#182436',
-  },
+  // footer: {
+  //   marginTop: 10,
+  //   flex: 0.5,
+  //   backgroundColor: '#182436',
+  // },
 };
 export default LandingPage;
